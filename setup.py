@@ -11,7 +11,7 @@ setup(
     description="一个轻量级、教学友好的 AI Agent 框架",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/henryk/neo-agent",
+    url="https://github.com/user-hw/neo-agent",
     packages=find_packages(),
     include_package_data=True,
     classifiers=[

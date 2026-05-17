@@ -30,8 +30,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/henryk/neo-agent"
-Repository = "https://github.com/henryk/neo-agent"
+Homepage = "https://github.com/user-hw/neo-agent"
+Repository = "https://github.com/user-hw/neo-agent"
 
 [project.scripts]
 neo-agent = "neo_agent.cli:main"

@@ -21,20 +21,14 @@ pip install -e .
 pip install -e ".[search]"
 ```
 
-```bash
-# 直接从 GitHub 安装
-pip install "neo-agent @ git+https://github.com/henryk/neo-agent.git"
+# 直接从 GitHub 安装（最新版）
+pip install git+https://github.com/user-hw/neo-agent.git
 
-# 从 GitHub 安装并启用搜索工具
-pip install "neo-agent[search] @ git+https://github.com/henryk/neo-agent.git"
-```
+# 带搜索工具支持
+pip install "neo-agent[search] @ git+https://github.com/user-hw/neo-agent.git"
 
-```bash
 # 安装指定版本（基于 Git tag）
 pip install "neo-agent @ git+https://github.com/user-hw/neo-agent.git@v0.1.1"
-
-# 安装指定版本并启用搜索工具
-pip install "neo-agent[search] @ git+https://github.com/user-hw/neo-agent.git@v0.1.1"
 ```
 
 建议后续每次发布都保持：
