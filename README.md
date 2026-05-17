@@ -14,10 +14,19 @@
 ## 📦 安装
 
 ```bash
+# 开发安装
 pip install -e .
 
 # 带搜索工具支持
 pip install -e ".[search]"
+```
+
+```bash
+# 直接从 GitHub 安装
+pip install "neo-agent @ git+https://github.com/henryk/neo-agent.git"
+
+# 从 GitHub 安装并启用搜索工具
+pip install "neo-agent[search] @ git+https://github.com/henryk/neo-agent.git"
 ```
 
 ## 🚀 快速开始
@@ -55,7 +64,18 @@ response = agent.run("你好！请介绍一下自己")
 print(response)
 ```
 
-### 3. ReAct Agent（工具调用）
+### 3. 命令行使用
+
+安装完成后可以直接运行：
+
+```bash
+neo-agent ask "你好，请用一句话介绍一下你自己"
+
+# 或者
+python -m neo_agent ask "帮我总结一下 ReAct Agent 是什么"
+```
+
+### 4. ReAct Agent（工具调用）
 
 ```python
 from neo_agent import NeoAgentLLM, ReActAgent, ToolRegistry
@@ -70,7 +90,7 @@ result = agent.run("计算 (15 + 7) * 3 的结果")
 print(result)
 ```
 
-### 4. ReflectionAgent（反思优化）
+### 5. ReflectionAgent（反思优化）
 
 ```python
 from neo_agent import NeoAgentLLM, ReflectionAgent

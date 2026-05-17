@@ -41,4 +41,9 @@ setup(
             "pytest-asyncio>=0.21.0",
         ],
     },
+    entry_points={
+        "console_scripts": [
+            "neo-agent=neo_agent.cli:main",
+        ],
+    },
 )
