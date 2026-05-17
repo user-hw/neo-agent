@@ -14,30 +14,16 @@
 ## 📦 安装
 
 ```bash
-# 从 PyPI 安装（推荐）
 pip install neo-agent-kit
+```
 
-# 带搜索工具支持
+带搜索工具支持：
+
+```bash
 pip install "neo-agent-kit[search]"
 ```
 
-```bash
-# 从 GitHub 安装最新开发版
-pip install git+https://github.com/user-hw/neo-agent.git
-
-# 带搜索工具支持
-pip install "neo-agent-kit[search] @ git+https://github.com/user-hw/neo-agent.git"
-
-# 安装指定版本（基于 Git tag）
-pip install "neo-agent-kit @ git+https://github.com/user-hw/neo-agent.git@v0.1.1"
-```
-
-建议后续每次发布都保持：
-
-1. 更新 `pyproject.toml` / `setup.py` / `neo_agent.__version__`
-2. 提交代码
-3. 打 tag，例如 `v0.1.2`
-4. 推送分支和 tag
+> 💡 如需安装最新开发版：`pip install git+https://github.com/user-hw/neo-agent.git`
 
 ## 🚀 快速开始
 
