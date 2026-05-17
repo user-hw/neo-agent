@@ -10,9 +10,16 @@ from typing import Sequence
 def _package_version() -> str:
     """Return the installed package version when available."""
     try:
+        from neo_agent import __version__
+
+        return __version__
+    except Exception:
+        pass
+
+    try:
         return version("neo-agent")
     except PackageNotFoundError:
-        return "0.1.0"
+        return "0.1.1"
 
 
 def build_parser() -> argparse.ArgumentParser:

@@ -5,7 +5,7 @@ from __future__ import annotations
 from importlib import import_module
 from typing import TYPE_CHECKING
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "NeoAgentLLM",

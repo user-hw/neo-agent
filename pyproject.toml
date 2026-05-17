@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "neo-agent"
-version = "0.1.0"
+version = "0.1.1"
 description = "一个轻量级、教学友好的 AI Agent 框架"
 readme = "README.md"
 license = {text = "MIT"}

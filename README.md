@@ -29,6 +29,21 @@ pip install "neo-agent @ git+https://github.com/henryk/neo-agent.git"
 pip install "neo-agent[search] @ git+https://github.com/henryk/neo-agent.git"
 ```
 
+```bash
+# 安装指定版本（基于 Git tag）
+pip install "neo-agent @ git+https://github.com/user-hw/neo-agent.git@v0.1.1"
+
+# 安装指定版本并启用搜索工具
+pip install "neo-agent[search] @ git+https://github.com/user-hw/neo-agent.git@v0.1.1"
+```
+
+建议后续每次发布都保持：
+
+1. 更新 `pyproject.toml` / `setup.py` / `neo_agent.__version__`
+2. 提交代码
+3. 打 tag，例如 `v0.1.2`
+4. 推送分支和 tag
+
 ## 🚀 快速开始
 
 ### 1. 配置环境变量
