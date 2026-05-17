@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="neo-agent",
+    name="neo-agent-kit",
     version="0.1.1",
     author="Neo Agent Team",
     description="一个轻量级、教学友好的 AI Agent 框架",
