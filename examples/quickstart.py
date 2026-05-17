@@ -1,16 +1,16 @@
 """
-neo-agent 快速体验示例
+neo-agent-kit 快速体验示例
 
-最简单的使用方式 - 一行代码都不需要改，只需配置 .env
+最简单的使用方式 - 只需配置 .env
 """
 from dotenv import load_dotenv
 load_dotenv()
 
-from neo_agent import NeoAgentLLM, SimpleAgent
+from neo_agent_kit import NeoAgentLLM, SimpleAgent
 
 
 def main():
-    print("🚀 neo-agent 快速体验\n")
+    print("🚀 neo-agent-kit 快速体验\n")
 
     # 自动检测 provider，无需手动指定
     llm = NeoAgentLLM()

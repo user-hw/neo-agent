@@ -1,4 +1,4 @@
-"""neo-agent command line interface."""
+"""neo-agent-kit command line interface."""
 
 from __future__ import annotations
 
@@ -10,14 +10,14 @@ from typing import Sequence
 def _package_version() -> str:
     """Return the installed package version when available."""
     try:
-        from neo_agent import __version__
+        from neo_agent_kit import __version__
 
         return __version__
     except Exception:
         pass
 
     try:
-        return version("neo-agent")
+        return version("neo-agent-kit")
     except PackageNotFoundError:
         return "0.1.1"
 
@@ -25,8 +25,8 @@ def _package_version() -> str:
 def build_parser() -> argparse.ArgumentParser:
     """Build the CLI parser."""
     parser = argparse.ArgumentParser(
-        prog="neo-agent",
-        description="neo-agent command line interface",
+        prog="neo-agent-kit",
+        description="neo-agent-kit command line interface",
     )
     parser.add_argument(
         "--version",
@@ -64,8 +64,8 @@ def run_ask(args: argparse.Namespace) -> int:
 
     load_dotenv()
 
-    from neo_agent.agents.simple_agent import SimpleAgent
-    from neo_agent.core.llm import NeoAgentLLM
+    from neo_agent_kit.agents.simple_agent import SimpleAgent
+    from neo_agent_kit.core.llm import NeoAgentLLM
 
     llm = NeoAgentLLM(
         model=args.model,
@@ -74,7 +74,7 @@ def run_ask(args: argparse.Namespace) -> int:
         provider=args.provider,
     )
     agent = SimpleAgent(
-        name="neo-agent-cli",
+        name="neo-agent-kit-cli",
         llm=llm,
         system_prompt=args.system_prompt,
     )

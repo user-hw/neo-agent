@@ -1,4 +1,4 @@
-"""Support `python -m neo_agent`."""
+"""Support `python -m neo_agent_kit`."""
 
 from .cli import main
 

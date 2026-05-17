@@ -1,11 +1,9 @@
 """PlanAndSolveAgent 示例 - 规划与执行分离"""
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from dotenv import load_dotenv
 load_dotenv()
 
-from neo_agent import NeoAgentLLM, PlanAndSolveAgent
+from neo_agent_kit import NeoAgentLLM, PlanAndSolveAgent
 
 
 def main():

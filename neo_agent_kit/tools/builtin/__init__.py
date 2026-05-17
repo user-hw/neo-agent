@@ -1,4 +1,4 @@
-"""neo-agent 内置工具集"""
+"""neo-agent-kit 内置工具集"""
 from .calculator import CalculatorTool
 from .search import SearchTool
 

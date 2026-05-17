@@ -1,8 +1,8 @@
-"""neo-agent 异常体系"""
+"""neo-agent-kit 异常体系"""
 
 
 class NeoAgentError(Exception):
-    """neo-agent 基础异常"""
+    """neo-agent-kit 基础异常"""
     pass
 
 

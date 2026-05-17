@@ -1,11 +1,9 @@
 """ReflectionAgent 示例 - 自我反思与迭代优化"""
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from dotenv import load_dotenv
 load_dotenv()
 
-from neo_agent import NeoAgentLLM, ReflectionAgent
+from neo_agent_kit import NeoAgentLLM, ReflectionAgent
 
 
 def main():

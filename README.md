@@ -1,4 +1,4 @@
-# neo-agent 🚀
+# neo-agent-kit 🚀
 
 一个轻量级、教学友好的 AI Agent 框架。从零开始构建，帮助理解 Agent 的底层工作原理。
 
@@ -49,7 +49,7 @@ OPENAI_API_KEY="sk-your-api-key"
 
 ```python
 from dotenv import load_dotenv
-from neo_agent import NeoAgentLLM, SimpleAgent
+from neo_agent_kit import NeoAgentLLM, SimpleAgent
 
 load_dotenv()
 
@@ -65,17 +65,17 @@ print(response)
 安装完成后可以直接运行：
 
 ```bash
-neo-agent ask "你好，请用一句话介绍一下你自己"
+neo-agent-kit ask "你好，请用一句话介绍一下你自己"
 
 # 或者
-python -m neo_agent ask "帮我总结一下 ReAct Agent 是什么"
+python -m neo_agent_kit ask "帮我总结一下 ReAct Agent 是什么"
 ```
 
 ### 4. ReAct Agent（工具调用）
 
 ```python
-from neo_agent import NeoAgentLLM, ReActAgent, ToolRegistry
-from neo_agent.tools.builtin import CalculatorTool
+from neo_agent_kit import NeoAgentLLM, ReActAgent, ToolRegistry
+from neo_agent_kit.tools.builtin import CalculatorTool
 
 llm = NeoAgentLLM()
 registry = ToolRegistry()
@@ -89,7 +89,7 @@ print(result)
 ### 5. ReflectionAgent（反思优化）
 
 ```python
-from neo_agent import NeoAgentLLM, ReflectionAgent
+from neo_agent_kit import NeoAgentLLM, ReflectionAgent
 
 llm = NeoAgentLLM()
 agent = ReflectionAgent(name="写作助手", llm=llm)
@@ -101,7 +101,7 @@ print(result)
 ## 🏗️ 架构
 
 ```
-neo_agent/
+neo_agent_kit/
 ├── core/                    # 核心层
 │   ├── agent.py            # Agent 抽象基类
 │   ├── llm.py              # NeoAgentLLM 统一接口

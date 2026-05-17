@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 
 class Config(BaseModel):
-    """neo-agent 配置类
+    """neo-agent-kit 配置类
 
     集中管理框架所有配置项，支持从环境变量读取。
     """

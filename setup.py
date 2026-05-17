@@ -1,4 +1,4 @@
-"""neo-agent 安装配置"""
+"""neo-agent-kit 安装配置"""
 from setuptools import setup, find_packages
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -43,7 +43,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "neo-agent=neo_agent.cli:main",
+            "neo-agent-kit=neo_agent_kit.cli:main",
         ],
     },
 )

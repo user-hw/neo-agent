@@ -34,7 +34,7 @@ Homepage = "https://github.com/user-hw/neo-agent"
 Repository = "https://github.com/user-hw/neo-agent"
 
 [project.scripts]
-neo-agent = "neo_agent.cli:main"
+neo-agent-kit = "neo_agent_kit.cli:main"
 
 [project.optional-dependencies]
 search = [
@@ -47,4 +47,4 @@ dev = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["neo_agent*"]
+include = ["neo_agent_kit*"]

@@ -1,25 +1,20 @@
 """
-neo-agent 完整测试文件
+neo-agent-kit 完整测试文件
 
 涵盖所有 Agent 范式和工具系统的测试。
 运行方式:
     python test_all.py
 """
-import sys
-import os
-
-# 确保可以导入 neo_agent
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from dotenv import load_dotenv
 load_dotenv()
 
-from neo_agent import (
+from neo_agent_kit import (
     NeoAgentLLM, Config,
     SimpleAgent, ReActAgent, ReflectionAgent, PlanAndSolveAgent,
     ToolRegistry, Message,
 )
-from neo_agent.tools.builtin import CalculatorTool
+from neo_agent_kit.tools.builtin import CalculatorTool
 
 
 def print_separator(title: str):
@@ -234,7 +229,7 @@ def test_tool_registry():
 def test_tool_chain():
     print_separator("测试 11: 工具链")
 
-    from neo_agent.tools.chain import ToolChain, ToolChainManager
+    from neo_agent_kit.tools.chain import ToolChain, ToolChainManager
 
     registry = ToolRegistry()
     registry.register_tool(CalculatorTool())
@@ -262,7 +257,7 @@ def test_tool_chain():
 # ============================================================
 def main():
     print("=" * 60)
-    print("  🧪 neo-agent 完整测试套件")
+    print("  🧪 neo-agent-kit 完整测试套件")
     print("=" * 60)
 
     # 配置

@@ -1,12 +1,10 @@
 """ReActAgent 示例 - 推理与行动结合"""
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from dotenv import load_dotenv
 load_dotenv()
 
-from neo_agent import NeoAgentLLM, ReActAgent, ToolRegistry
-from neo_agent.tools.builtin import CalculatorTool
+from neo_agent_kit import NeoAgentLLM, ReActAgent, ToolRegistry
+from neo_agent_kit.tools.builtin import CalculatorTool
 
 
 def main():

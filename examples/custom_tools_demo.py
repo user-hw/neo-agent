@@ -1,13 +1,11 @@
 """自定义工具开发示例 - 展示如何扩展工具系统"""
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from dotenv import load_dotenv
 load_dotenv()
 
-from neo_agent import NeoAgentLLM, SimpleAgent, ToolRegistry
-from neo_agent.tools.base import Tool, ToolParameter
-from neo_agent.tools.chain import ToolChain, ToolChainManager
+from neo_agent_kit import NeoAgentLLM, SimpleAgent, ToolRegistry
+from neo_agent_kit.tools.base import Tool, ToolParameter
+from neo_agent_kit.tools.chain import ToolChain, ToolChainManager
 from typing import Dict, Any, List
 
 
