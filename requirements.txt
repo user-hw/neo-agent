@@ -6,3 +6,10 @@ python-dotenv>=1.0.0
 # 可选: 搜索工具
 # tavily-python>=0.3.0
 # google-search-results>=2.4.0
+
+# 可选: 记忆系统 (更好的嵌入质量)
+# sentence-transformers>=2.0.0
+
+# 可选: RAG 系统 (文档解析)
+# pdfplumber>=0.9.0
+# python-docx>=0.8.11

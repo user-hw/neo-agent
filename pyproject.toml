@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "neo-agent-kit"
-version = "0.1.1"
-description = "一个轻量级、教学友好的 AI Agent 框架"
+version = "0.2.0"
+description = "一个轻量级、教学友好的 AI Agent 框架，支持记忆系统和 RAG"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
@@ -40,6 +40,17 @@ neo-agent-kit = "neo_agent_kit.cli:main"
 search = [
     "tavily-python>=0.3.0",
     "google-search-results>=2.4.0",
+]
+memory = [
+    "sentence-transformers>=2.0.0",
+]
+rag = [
+    "sentence-transformers>=2.0.0",
+    "pdfplumber>=0.9.0; python_version>='3.10'",
+    "python-docx>=0.8.11",
+]
+all = [
+    "neo-agent-kit[search,memory,rag]",
 ]
 dev = [
     "pytest>=7.0.0",

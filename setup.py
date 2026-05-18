@@ -6,9 +6,9 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="neo-agent-kit",
-    version="0.1.1",
+    version="0.2.0",
     author="Neo Agent Team",
-    description="一个轻量级、教学友好的 AI Agent 框架",
+    description="一个轻量级、教学友好的 AI Agent 框架，支持记忆系统和 RAG",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/user-hw/neo-agent",
@@ -35,6 +35,14 @@ setup(
         "search": [
             "tavily-python>=0.3.0",
             "google-search-results>=2.4.0",
+        ],
+        "memory": [
+            "sentence-transformers>=2.0.0",
+        ],
+        "rag": [
+            "sentence-transformers>=2.0.0",
+            "pdfplumber>=0.9.0",
+            "python-docx>=0.8.11",
         ],
         "dev": [
             "pytest>=7.0.0",
