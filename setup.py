@@ -6,9 +6,9 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="neo-agent-kit",
-    version="0.2.0",
+    version="0.3.0",
     author="Neo Agent Team",
-    description="一个轻量级、教学友好的 AI Agent 框架，支持记忆系统和 RAG",
+    description="一个轻量级、教学友好的 AI Agent 框架，支持记忆系统、RAG 和上下文工程",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/user-hw/neo-agent",

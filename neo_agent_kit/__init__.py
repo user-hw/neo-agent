@@ -4,6 +4,7 @@
 - 4 种 Agent 范式: SimpleAgent / ReActAgent / ReflectionAgent / PlanAndSolveAgent
 - 记忆系统: WorkingMemory / EpisodicMemory / SemanticMemory
 - RAG 系统: 文档处理 + 智能检索 + LLM 增强生成
+- 上下文工程: ContextBuilder (GSSC 流水线) + NoteTool + TerminalTool
 - 多提供商 LLM 支持: OpenAI / DeepSeek / 智谱 / ModelScope / Ollama / VLLM
 """
 
@@ -12,7 +13,7 @@ from __future__ import annotations
 from importlib import import_module
 from typing import TYPE_CHECKING
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
     # LLM & Core
@@ -43,6 +44,10 @@ __all__ = [
     # RAG
     "RAGPipeline",
     "DocumentProcessor",
+    # Context Engineering (v0.3.0)
+    "ContextBuilder",
+    "ContextConfig",
+    "ContextPacket",
 ]
 
 _EXPORTS = {
@@ -74,6 +79,10 @@ _EXPORTS = {
     # RAG
     "RAGPipeline": ("neo_agent_kit.rag.pipeline", "RAGPipeline"),
     "DocumentProcessor": ("neo_agent_kit.rag.document", "DocumentProcessor"),
+    # Context Engineering (v0.3.0)
+    "ContextBuilder": ("neo_agent_kit.context", "ContextBuilder"),
+    "ContextConfig": ("neo_agent_kit.context", "ContextConfig"),
+    "ContextPacket": ("neo_agent_kit.context", "ContextPacket"),
 }
 
 
@@ -94,6 +103,7 @@ if TYPE_CHECKING:
     from .agents.react_agent import ReActAgent
     from .agents.reflection_agent import ReflectionAgent
     from .agents.simple_agent import SimpleAgent
+    from .context import ContextBuilder, ContextConfig, ContextPacket
     from .core.agent import Agent
     from .core.config import Config
     from .core.exceptions import AgentError, ConfigError, LLMError, NeoAgentError, ToolError

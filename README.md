@@ -7,9 +7,10 @@
 - **🎯 轻量级**: 核心依赖仅 `openai` + `pydantic` + `python-dotenv`
 - **🔌 多提供商**: 支持 OpenAI / ModelScope / 智谱 / DeepSeek / Ollama / VLLM
 - **🧠 四种 Agent 范式**: SimpleAgent / ReActAgent / ReflectionAgent / PlanAndSolveAgent
-- **� 记忆系统**: 工作记忆 / 情景记忆 / 语义记忆，支持整合与遗忘机制
+- **💾 记忆系统**: 工作记忆 / 情景记忆 / 语义记忆，支持整合与遗忘机制
 - **📚 RAG 系统**: 多格式文档处理 + 智能分块 + 检索增强生成
-- **🛠️ 万物皆工具**: 统一工具抽象，内置计算器、搜索、记忆、RAG 工具
+- **⚙️ 上下文工程** (v0.3.0): ContextBuilder (GSSC 流水线) + NoteTool + TerminalTool
+- **🛠️ 万物皆工具**: 统一工具抽象，内置计算器、搜索、记忆、RAG、笔记、终端工具
 - **📖 教学友好**: 代码清晰注释，渐进式学习路径
 - **🔍 自动检测**: 智能推断 LLM 提供商，零配置即可运行
 
@@ -116,11 +117,37 @@ print(rag_tool.execute("search", query="Python 的历史"))
 print(rag_tool.execute("add_document", file_path="./docs/guide.pdf"))
 ```
 
-### 5. 命令行使用
+### 5. 上下文工程 (v0.3.0 新增)
 
-```bash
-neo-agent-kit ask "你好，请用一句话介绍一下你自己"
-python -m neo_agent_kit ask "帮我总结一下 ReAct Agent 是什么"
+```python
+from neo_agent_kit import ContextBuilder, ContextConfig, ContextPacket
+from neo_agent_kit.tools.builtin import MemoryTool, RAGTool, NoteTool, TerminalTool
+
+# ContextBuilder: GSSC (Gather-Select-Structure-Compress) 流水线
+builder = ContextBuilder(
+    memory_tool=MemoryTool(user_id="ctx_demo"),
+    rag_tool=RAGTool(rag_namespace="ctx_demo"),
+    config=ContextConfig(max_tokens=3000),
+)
+
+context = builder.build(
+    user_query="如何优化Python性能？",
+    system_instructions="你是一位Python性能优化专家。",
+)
+print(context)
+
+# NoteTool: 结构化笔记 (Markdown + YAML)
+notes = NoteTool(workspace="./project_notes")
+print(notes.execute("create", title="重构计划", content="## 目标\n优化数据库查询",
+                    note_type="task_state", tags="refactoring,week1"))
+print(notes.execute("search", query="重构"))
+print(notes.execute("summary"))
+
+# TerminalTool: 安全的即时文件系统访问
+term = TerminalTool(workspace="./my_project")
+print(term.execute("ls -la"))
+print(term.execute("grep -r 'TODO' --include='*.py' ."))
+print(term.execute("cat README.md"))
 ```
 
 ## 🏗️ 架构
@@ -138,7 +165,7 @@ neo_agent_kit/
 │   ├── react_agent.py      # ReActAgent
 │   ├── reflection_agent.py # ReflectionAgent
 │   └── plan_solve_agent.py # PlanAndSolveAgent
-├── memory/                  # 记忆系统 (v0.2.0 新增)
+├── memory/                  # 记忆系统 (v0.2.0)
 │   ├── base.py             # MemoryItem / MemoryConfig / BaseMemory
 │   ├── manager.py          # MemoryManager 统一协调
 │   ├── embedding.py        # 嵌入服务 (TF-IDF / Local / DashScope)
@@ -146,9 +173,11 @@ neo_agent_kit/
 │       ├── working.py      # 工作记忆 (TTL, 纯内存)
 │       ├── episodic.py     # 情景记忆 (SQLite 持久化)
 │       └── semantic.py     # 语义记忆 (概念 + 实体提取)
-├── rag/                     # RAG 系统 (v0.2.0 新增)
+├── rag/                     # RAG 系统 (v0.2.0)
 │   ├── document.py         # 文档处理 (多格式 + 智能分块)
 │   └── pipeline.py         # RAG 管道 (索引/检索/生成)
+├── context/                 # 上下文工程 (v0.3.0 新增)
+│   └── __init__.py         # ContextBuilder / ContextPacket / ContextConfig
 └── tools/                   # 工具系统层
     ├── base.py             # 工具基类
     ├── registry.py         # 工具注册机制
@@ -157,8 +186,10 @@ neo_agent_kit/
     └── builtin/            # 内置工具
         ├── calculator.py   # 计算工具
         ├── search.py       # 搜索工具
-        ├── memory_tool.py  # 记忆工具 (v0.2.0 新增)
-        └── rag_tool.py     # RAG 工具 (v0.2.0 新增)
+        ├── memory_tool.py  # 记忆工具 (v0.2.0)
+        ├── rag_tool.py     # RAG 工具 (v0.2.0)
+        ├── note_tool.py    # 笔记工具 (v0.3.0 新增)
+        └── terminal_tool.py # 终端工具 (v0.3.0 新增)
 ```
 
 ## 📄 License

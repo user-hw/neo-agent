@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "neo-agent-kit"
-version = "0.2.0"
-description = "一个轻量级、教学友好的 AI Agent 框架，支持记忆系统和 RAG"
+version = "0.3.0"
+description = "一个轻量级、教学友好的 AI Agent 框架，支持记忆系统、RAG 和上下文工程"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
